@@ -17,12 +17,15 @@ var quakesObservable = Rx.Observable
     return {
       lat: quake.geometry.coordinates[1],
       lng: quake.geometry.coordinates[0],
-      size: quake.properties.mag * 10000
+      size: quake.properties.mag * 10000,
+      title: quake.properties.title
     };
   });
 
 quakesObservable.subscribe(
   function (point) {
-    L.circle([point.lat, point.lng], point.size).addTo(map);
+    var c = L.circle([point.lat, point.lng], point.size);
+    c.bindPopup(point.title);
+    c.addTo(map);
   }
 );
