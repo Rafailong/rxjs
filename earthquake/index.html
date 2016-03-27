@@ -10,17 +10,36 @@
     
     <title>RxJS - Earthquake map</title>
     
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
     <style type="text/css">
       html, body {
         margin: 0;
         padding: 0;
         height: 100%;
       }
-      #map { height: 100%; }
+      #map, .container, .section { height: 100%; }
     </style>
   </head>
   <body>
-    <div id="map"></div>
+    <nav class="light-blue lighten-1" role="navigation">
+      <div class="nav-wrapper container"><a id="logo-container" href="https://github.com/Reactive-Extensions/RxJS" class="brand-logo">RxJS</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="https://github.com/Rafailong">Rafailong</a></li>
+        </ul>
+  
+        <ul id="nav-mobile" class="side-nav">
+          <li><a href="https://github.com/Rafailong">Rafailong</a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+    
+    <div class="section no-pad-bot" id="index-banner">
+      <div class="container">
+        <div id="map"></div>
+      </div>
+    </div>
     
     <script>
       var URL = 'http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojsonp';
